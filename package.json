@@ -13,10 +13,14 @@
   },
   "dependencies": {
     "gatsby": "^2.0.76",
+    "gatsby-plugin-manifest": "^2.1.1",
+    "gatsby-plugin-offline": "^2.1.1",
     "gatsby-source-darksky": "^1.2.0",
     "gatsby-source-openweathermap": "^1.0.4",
     "react": "^16.5.1",
-    "react-dom": "^16.5.1"
+    "react-animated-weather": "^2.0.0",
+    "react-dom": "^16.5.1",
+    "skycons": "^1.0.0"
   },
   "repository": {
     "type": "git",

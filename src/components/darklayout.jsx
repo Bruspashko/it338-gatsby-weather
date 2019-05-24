@@ -1,5 +1,5 @@
 import React from "react"
-
+import ReactAnimatedWeather from 'react-animated-weather'
 import { StaticQuery, Link, graphql } from "gatsby"
 
 /* import "/home/cabox/workspace/gatsby-starter-weather/src/styles/global.css" */
@@ -41,18 +41,28 @@ export default ({ children }) => (
 }  `
 }
     render={data => (
-  <div>
+  <div >
     <Link to="/" style={{ float: `right`}}>
       Home
     </Link>
-    {children}
-{/*    <Link to="/">Home </Link> */}
-    <h3><ul>
-      <li><h3>Currently Summary: {data.weatherData.currently.summary}</h3></li> 
-      <li><h3>cloudCover: {data.weatherData.currently.cloudCover}</h3></li> 
-      <li><h3>latitude: {data.weatherData.latitude}</h3></li>
-      <li><h3>longitude: {data.weatherData.longitude}</h3></li>
-    </ul></h3>  
+    
+    {/*    <Link to="/">Home </Link> */}
+    <div class="box">
+      <div class="info">  
+        <h3>Chicago</h3><br/>
+        <h3 class="temperature">{parseInt(data.weatherData.currently.temperature)}</h3>
+      </div>
+      <div class="icon">
+        <ReactAnimatedWeather
+          icon={data.weatherData.currently.icon.toUpperCase().replace(/-/g, '_')}
+          color="goldenrod"
+          size="64"
+          animate="true"
+        /><br/>
+        <h3>{data.weatherData.currently.summary}</h3>
+      </div>
+  
+    </div>
   </div>
     )}
   />
